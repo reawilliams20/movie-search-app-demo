@@ -75,7 +75,8 @@ Use **Copilot Ask** or **Edit Mode** to:
 - Display results
 
 Example prompt:
-> "Create a React component that fetches movies from OMDb API and displays them in a grid."
+> "Using the latest UI, Create a React component that fetches movies from OMDb API and displays them in a grid."
+> "Update the web app so that it is responsive to browser screens"
 
 ### 5. **Generate Tests with Copilot + MCP**
 Use **Copilot Agent Mode** to:
