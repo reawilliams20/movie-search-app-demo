@@ -1,6 +1,6 @@
-# 🎬 Movie Search App
+# 🎬 Agentic Movie Search App Demo 
 
-A simple React app that allows users to search for movies using the OMDb API and displays results with titles and posters.
+A simple React app that allows users to search for movies using the OMDb API and displays results with titles and posters. Created with GHCP Agent and tested with Playwright MCP.
 
 ## 🚀 Features
 
@@ -8,6 +8,21 @@ A simple React app that allows users to search for movies using the OMDb API and
 - 🖼️ Display movie posters, titles, and release years
 - ⚡ Built with React, TypeScript, and Vite
 - 🎨 Responsive and clean UI
+
+## 🤖 GitHub Copilot Demo
+
+This project is ideal for demonstrating:
+- Copilot Agent Mode for generating tests  
+- Copilot Edit Mode for refactoring  
+- Copilot Ask Mode for code explanations  
+- Playwright MCP for browser automation
+
+### 🛠️ Tools Required:
+- VS Code (v1.99+)
+- Node.js (v18+)
+- GitHub Copilot (with Agent Mode enabled)
+- Playwright MCP (npx @playwright/mcp@latest)
+- React + Vite (for the web app)
 
 ## 🛠️ Setup Instructions
 
@@ -32,57 +47,61 @@ npm run dev
 
 The app will be available at `http://localhost:5173`.
 
-## 🔧 Configuration
+### 4. **Enable GitHub Copilot Agent Mode**
+- Open VS Code
+- Go to Settings → Search `chat.agent.enabled` → Enable it
+- Open Copilot Chat → Switch to **Agent Mode**
 
-This app uses the OMDb API. The demo key `apikey=demo` is used by default, but you can replace it with your own key:
+### 3. **Install Playwright MCP**
+```bash
+code --add-mcp '{"name":"playwright","command":"npx","args":["@playwright/mcp@latest"]}'
+```
+- Or manually add to `settings.json`:
+```json
+"mcp.servers": {
+  "playwright": {
+    "command": "npx",
+    "args": ["@playwright/mcp@latest", "--browser", "msedge"]
+  }
+}
+```
+- Start the server via Command Palette: `MCP: List Servers` → Select `playwright`
 
-1. Sign up at OMDb API  
-2. Replace the API key in `App.tsx`:
+### 4. **Build the Web App with Copilot**
+Use **Copilot Ask** or **Edit Mode** to:
+- Scaffold components
+- Add a search bar
+- Fetch movie data from OMDb API
+- Display results
 
-```typescript
-const response = await fetch(`https://www.omdbapi.com/?apikey=YOUR_API_KEY&s=${query}`);
+Example prompt:
+> "Create a React component that fetches movies from OMDb API and displays them in a grid."
+
+### 5. **Generate Tests with Copilot + MCP**
+Use **Copilot Agent Mode** to:
+- Navigate to the app
+- Type in the search bar
+- Validate that results appear
+
+Example prompt:
+> "Generate a Playwright test that searches for 'Garfield' and verifies the movie appears."
+
+Copilot will:
+- Use MCP to open the browser
+- Interact with the UI
+- Generate a test like:
+```ts
+test('Search for Garfield', async ({ page }) => {
+  await page.goto('http://localhost:5173');
+  await page.getByPlaceholder('Search movies...').fill('Garfield');
+  await page.keyboard.press('Enter');
+  await expect(page.getByText('Garfield')).toBeVisible();
+});
 ```
 
-## 🧪 Testing (Optional)
-
-You can integrate Playwright for end-to-end testing. Here's a basic example:
-
+### 6. **Run and Validate the Test**
 ```bash
 npx playwright test
 ```
 
-## 🤖 GitHub Copilot Demo
-
-This project is ideal for demonstrating:
-- Copilot Agent Mode for generating tests  
-- Copilot Edit Mode for refactoring  
-- Copilot Ask Mode for code explanations  
-- Playwright MCP for browser automation
-
-### 🛠️ Tools Required:
-- VS Code (v1.99+)
-- Node.js (v18+)
-- GitHub Copilot (with Agent Mode enabled)
-- Playwright MCP (npx @playwright/mcp@latest)
-- React + Vite (for the web app)
-
-## 📁 Project Structure
-
-```
-movie-search-app/
-├── src/
-│   ├── components/
-│   │   ├── SearchBar.tsx
-│   │   ├── MovieList.tsx
-│   │   └── MovieCard.tsx
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-├── .gitignore
-├── README.md
-```
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
 
