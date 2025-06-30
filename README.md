@@ -59,12 +59,12 @@ This project is ideal for demonstrating:
 - Copilot Ask Mode for code explanations  
 - Playwright MCP for browser automation
 
-### 🛠️ Tools Required
-VS Code (v1.99+)
-Node.js (v18+)
-GitHub Copilot (with Agent Mode enabled)
-Playwright MCP (npx @playwright/mcp@latest)
-React + Vite (for the web app)
+### 🛠️ Tools Required:
+- VS Code (v1.99+)
+- Node.js (v18+)
+- GitHub Copilot (with Agent Mode enabled)
+- Playwright MCP (npx @playwright/mcp@latest)
+- React + Vite (for the web app)
 
 ## 📁 Project Structure
 
