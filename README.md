@@ -6,7 +6,7 @@ A simple React app that allows users to search for movies using the OMDb API and
 
 - 🔍 Search movies by title
 - 🖼️ Display movie posters, titles, and release years
-- ⚡ Built with React and Vite
+- ⚡ Built with React, TypeScript, and Vite
 - 🎨 Responsive and clean UI
 
 ## 🛠️ Setup Instructions
@@ -15,7 +15,7 @@ A simple React app that allows users to search for movies using the OMDb API and
 
 ```bash
 git clone https://github.com/your-username/movie-search-app-demo.git
-cd movie-search-app-demo
+cd movie-search-app
 ```
 
 ### 2. Install dependencies
@@ -37,9 +37,9 @@ The app will be available at `http://localhost:5173`.
 This app uses the OMDb API. The demo key `apikey=demo` is used by default, but you can replace it with your own key:
 
 1. Sign up at OMDb API  
-2. Replace the API key in `App.jsx`:
+2. Replace the API key in `App.tsx`:
 
-```js
+```typescript
 const response = await fetch(`https://www.omdbapi.com/?apikey=YOUR_API_KEY&s=${query}`);
 ```
 
@@ -72,11 +72,11 @@ This project is ideal for demonstrating:
 movie-search-app/
 ├── src/
 │   ├── components/
-│   │   ├── SearchBar.jsx
-│   │   ├── MovieList.jsx
-│   │   └── MovieCard.jsx
-│   ├── App.jsx
-│   ├── main.jsx
+│   │   ├── SearchBar.tsx
+│   │   ├── MovieList.tsx
+│   │   └── MovieCard.tsx
+│   ├── App.tsx
+│   ├── main.tsx
 │   └── index.css
 ├── .gitignore
 ├── README.md
