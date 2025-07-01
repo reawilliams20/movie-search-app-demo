@@ -85,7 +85,7 @@ Use **Copilot Agent Mode** to:
 - Validate that results appear
 
 Example prompt:
-> "Generate a Playwright test that searches for 'Garfield' and verifies the movie appears."
+> "Using mcp playwright generate a test that searches for 'Garfield' and verifies the movie appears."
 
 Copilot will:
 - Use MCP to open the browser
